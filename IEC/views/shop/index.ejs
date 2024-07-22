@@ -1,0 +1,70 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+
+</head>
+<body>
+    <header class="home-header">
+        <h2 class="home-header__logo">IEC closing</h2>
+        <nav class="home-header__nav">
+            <ul class="home-heder__item-list">
+                <li class="home-header__item">
+                    <a class="<%= path === '/' ? 'active' : '' %>" href="/">Login</a>
+                </li>
+                <li class="home-header__item">
+                    <a class="<%= path === '/register' ? 'active' : '' %>" href="/register">Register</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container mt-4">
+            <div class="card">
+            
+                <div class="card-body">
+                    <h5 class="card-title">Welcome on my webshop!</h5>
+                    <p class="card-text">You are currently on the <b>Login page</b>. If you don't have an account already, please register one to be able to use the page for shopping!</p>
+                    <p>Please use the navigaton bar to get to the registration page.</p>
+                    <p class="card-text">If you've already registered, use the login form below to enter the site.</p>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Login</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/" method="POST">
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input type="email" class="form-control" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control" name="password" id="password">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+                </div>       
+            </div>
+        </div>
+       
+    </main>
+    <script>
+        // Show the popup if it exists
+        const popup = document.getElementById('success-popup');
+        if (popup) {
+            // Hide the popup after 5 seconds with fade-out effect
+            setTimeout(() => {
+                popup.classList.add('fade-out');
+                // Remove the popup from the DOM after the fade-out transition completes
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                }, 1000); // Match the duration of the fade-out transition
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
